@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<header>
+<h1>메인페이지</h1>
+<a href="userLoginForm">회원 로그인</a>
+<a href="adminLoginForm">관리자 로그인</a>
+</header>
+<aside>
+<h3>사이드 구역</h3>
+</aside>
+<main>
+<div>
+	<img src="/image/melona.png" alt="이미지">
+	<span>상품명 : 메로나</span>
+	<span>가격 : 1000원</span>
+</div>
+
+</main>
+<footer>
+<h3>푸터 구역</h3>
+</footer>
+</body>
+</html>

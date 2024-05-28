@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>상품 상세페이지</h1>
+<div>
+	<img th:src="@{${product.image}}" alt="이미지">
+	<span>제품명 : [[${product.pname}]] </span>
+	<span>가격 : [[${product.price}]]</span>
+	<input type="button" value="장바구니 담기" onclick="sendData1()">
+	<input type="button" value="주문하기" onclick="sendData2()">
+</div>
+
+
+<script>
+    function sendData1() {
+        var username = "user1";
+        var password = "password123";
+        var url = "/login?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
+        window.location.href = url;
+    }
+    
+    function sendData2() {
+        var username = "user1";
+        var password = "password123";
+        var url = "/login?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
+        window.location.href = url;
+    }
+</script>	
+
+</body>
+</html>

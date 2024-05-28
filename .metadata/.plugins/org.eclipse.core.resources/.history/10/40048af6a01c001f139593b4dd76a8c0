@@ -1,0 +1,49 @@
+package com.example.shop.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.shop.dao.IShopDao;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import lombok.extern.log4j.Log4j2;
+
+@Controller
+@Log4j2
+public class MyController {
+	@Autowired
+	private IShopDao dao;
+	
+	@RequestMapping("/")
+	public String root() {
+		return "main";
+	}
+	
+	@RequestMapping("/userLoginForm")
+	public String userLoginForm() {
+		return "/user/loginForm";
+	}
+	
+	
+	@RequestMapping("/adminLoginForm")
+	public String adminLoginForm() {
+		return "/admin/loginForm";
+	}
+	
+	
+	@RequestMapping("/userLogin")
+	public String userLogin(HttpServletRequest request) {
+		String username = request.getParameter("username");
+		String pw = request.getParameter("pw");
+		
+		HttpSession session = request.getSession();
+		
+		return "main";
+	}
+	
+	
+	
+	
+}

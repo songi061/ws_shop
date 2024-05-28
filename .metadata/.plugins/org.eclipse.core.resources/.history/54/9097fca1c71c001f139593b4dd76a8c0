@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>상품 상세페이지</h1>
+<div>
+	<img th:src="@{${product.image}}" alt="이미지"><br>
+	<span>제품명 : [[${product.pname}]] </span><br>
+	<span>가격 : [[${product.price}]]</span><br>
+	<form action="" method="get">
+		<input type="hidden" value="[[${product.pid}]]">
+		수량<input type="number" name="qty" min="1" max="9" value="1" id="qty">
+		
+	<!-- <a th:href="@{addCart(pid=${product.pid}),(qty=qty.value)">장바구니 담기</a>
+	<a th:href="@{addCart(pid=${product.pid}),(qty=qty.value)">주문하기</a> -->
+	</form>
+	
+<!-- 	<input type="button" value="장바구니 담기"  onclick="sendData1()">
+	<input type="button" value="주문하기"  onclick="sendData2()"> -->
+</div>
+
+
+<!-- <script th:inline="javascript">
+	/*<![CDATA[*/
+    function sendData1() {
+    	var pid = [[${product.pid}]];
+    	var qty = document.getElementById("qty").value; // 수량 값 가져오기
+        if(confirm("해당 제품을 장바구니에 " + qty + "개 담으시겠습니까?")){
+            location.href='addCart?pid=' + pid + '&qty=' + qty; // pid와 qty 함께 보내기
+        }
+    }
+    
+    function sendData2() {
+    	var pid =[[${product.pid}]];
+    	var qty = document.getElementById("qty").value;
+        if(confirm("해당 제품을 " + qty + "개 주문하시겠습니까?")){
+            location.href='order?pid=' + pid + '&qty=' + qty; // pid와 qty 함께 보내기
+        }
+    }
+    /*]]>*/
+</script> -->	
+
+</body>
+</html>

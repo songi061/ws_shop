@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+img{
+	width : 200px;
+	height : 200px;
+}
+
+ul{
+	list-style : none;
+}
+</style>
+<body>
+
+<header>
+<h1>메인페이지</h1>
+<a href="userLoginForm">회원 로그인</a>
+<a href="adminLoginForm">관리자 로그인</a>
+</header>
+<aside>
+<h3>사이드 구역</h3>
+</aside>
+<main>
+<div>
+	<ul th:each="dto, status : ${plist}">
+		<li><a th:href="@{detail(pid=${dto.pid})}"><img th:src="@{${dto.image}}" alt="이미지"></a></li>
+		<li><span>상품명 : [[${dto.pname}]]</span></li>
+		<li><span>가격 : [[${dto.price}]]원</span></li>
+	</ul>
+</div>
+
+</main>
+<footer>
+<h3>푸터 구역</h3>
+</footer>
+</body>
+</html>

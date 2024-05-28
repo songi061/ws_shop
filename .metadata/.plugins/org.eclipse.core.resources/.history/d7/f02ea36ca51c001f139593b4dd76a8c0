@@ -1,0 +1,9 @@
+package com.example.shop.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+@Mapper
+public interface IShopDao {
+	public int userLogin(@Param("username")String username, @Param("pw")String pw);
+}

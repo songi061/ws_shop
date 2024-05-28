@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>상품 상세페이지</h1>
+<div>
+	<img th:src="@{${product.image}}" alt="이미지">
+	<span>제품명 : [[${product.pname}]] </span>
+	<span>가격 : [[${product.price}]]</span>
+	<input type="number" name="qty" min="1" max="9">
+	<input type="button" value="장바구니 담기" th:onclick="sendData1([[${product.pid}]])">
+	<input type="button" value="주문하기" th:onclick="sendData2([[${product.pid}]])">
+</div>
+
+
+<script>
+    function sendData1(pid) {
+    	if(confirm("해당 제품을 장바구니에 담으시겠습니까?")){
+    		location.href='/addCart?pid=' + pid;
+    	}
+    }
+    
+    function sendData2(pid) {
+        if(confirm("해당 제품을 주문하시겠습니까?")){
+    		location.href='/tempOrder?pid=' + pid;
+    	}
+    }
+</script>	
+
+</body>
+</html>

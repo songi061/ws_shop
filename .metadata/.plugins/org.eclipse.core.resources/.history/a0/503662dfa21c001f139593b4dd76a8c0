@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원 로그인 페이지</h1>
+<form action="userLogin" method="get">
+	아이디 : <input type="text" name="username"><br>
+	패스워드 : <input type="password" name="pw">
+	<input type="submit" value="로그인">
+</form>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    /* 타임리프 변수를 자바스크립트 코드에 삽입 */
+    var errorMessage = /*[[${errorMessage}]]*/ '';
+    if (errorMessage && errorMessage.trim() !== '') {
+        alert(errorMessage);
+    }
+    /*]]>*/
+</script>
+</body>
+</html>
